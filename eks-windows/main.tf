@@ -4,12 +4,17 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.0"
     }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+    }
+    tls = {
+      source = "hashicorp/tls"
+    }
   }
 }
 
 provider "aws" {
   region = "us-east-1"
-  profile ="terraform-bootcamp"
 }
 
 provider "kubernetes" {
@@ -264,14 +269,11 @@ resource "aws_eks_addon" "eks_windows_addon" {
 ## Enable VPC CNI Windows Support
 
 resource "kubernetes_config_map" "amazon_vpc_cni_windows" {
-  depends_on = [
-    aws_eks_cluster.eks_windows
-  ]
+  depends_on = [aws_eks_cluster.eks_windows]
   metadata {
     name      = "amazon-vpc-cni"
     namespace = "kube-system"
   }
-
   data = {
     enable-windows-ipam : "true"
   }
@@ -280,6 +282,7 @@ resource "kubernetes_config_map" "amazon_vpc_cni_windows" {
 ## AWS CONFIGMAP
 
 resource "kubernetes_config_map" "configmap" {
+  depends_on = [aws_eks_cluster.eks_windows]
   data = {
     "mapRoles" = <<EOT
 - groups:
@@ -340,7 +343,7 @@ resource "aws_launch_template" "eks_windows_nodegroup_lt" {
 <powershell>
 [string]$EKSBinDir = "$env:ProgramFiles\Amazon\EKS"
 [string]$EKSBootstrapScriptFile = "$env:ProgramFiles\Amazon\EKS\Start-EKSBootstrap.ps1"
-& $EKSBootstrapScriptFile -EKSClusterName "${aws_eks_cluster.eks_windows.name}" -APIServerEndpoint "${aws_eks_cluster.eks_windows.endpoint}" -Base64ClusterCA "${data.aws_eks_cluster.eks_windows_cluster_data.certificate_authority[0].data}" 3>&1 4>&1 5>&1 6>&1
+& $EKSBootstrapScriptFile -EKSClusterName "${aws_eks_cluster.eks_windows.name}" -APIServerEndpoint "${aws_eks_cluster.eks_windows.endpoint}" -Base64ClusterCA "${data.aws_eks_cluster.eks_windows_cluster_data.certificate_authority[0].data}" -DNSClusterIP "10.100.0.10" 3>&1 4>&1 5>&1 6>&1
 </powershell>
 
 EOF
