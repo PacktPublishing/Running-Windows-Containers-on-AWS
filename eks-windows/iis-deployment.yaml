@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: windows-server-iis-ltsc2019
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: windows-server-iis-ltsc2019
+      tier: backend
+      track: stable
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: windows-server-iis-ltsc2019
+        tier: backend
+        track: stable
+    spec:
+      containers:
+      - name: windows-server-iis-ltsc2019
+        image: mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+        ports:
+        - name: http
+          containerPort: 80
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        kubernetes.io/os: windows
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: windows-server-iis-ltsc2019-service
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: windows-server-iis-ltsc2019
+    tier: backend
+    track: stable
+  sessionAffinity: None
+  type: LoadBalancer
+  
