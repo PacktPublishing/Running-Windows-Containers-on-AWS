@@ -9,6 +9,7 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+  profile ="terraform-bootcamp"
 }
 
 provider "kubernetes" {
@@ -339,7 +340,7 @@ resource "aws_launch_template" "eks_windows_nodegroup_lt" {
 <powershell>
 [string]$EKSBinDir = "$env:ProgramFiles\Amazon\EKS"
 [string]$EKSBootstrapScriptFile = "$env:ProgramFiles\Amazon\EKS\Start-EKSBootstrap.ps1"
-& $EKSBootstrapScriptFile -EKSClusterName "${aws_eks_cluster.eks_windows.name}" -APIServerEndpoint "${aws_eks_cluster.eks_windows.endpoint}" -Base64ClusterCA "${data.aws_eks_cluster.eks_windows_cluster_data.certificate_authority[0].data}" -DNSClusterIP "10.100.0.10" 3>&1 4>&1 5>&1 6>&1
+& $EKSBootstrapScriptFile -EKSClusterName "${aws_eks_cluster.eks_windows.name}" -APIServerEndpoint "${aws_eks_cluster.eks_windows.endpoint}" -Base64ClusterCA "${data.aws_eks_cluster.eks_windows_cluster_data.certificate_authority[0].data}" 3>&1 4>&1 5>&1 6>&1
 </powershell>
 
 EOF
