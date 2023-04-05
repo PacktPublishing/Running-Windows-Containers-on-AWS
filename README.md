@@ -22,7 +22,7 @@ If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1804
 alt="https://www.packtpub.com/" border="5" /></a>
 
 ## Instructions and Navigations
-All of the code is organized into folders. For example, Chapter05.
+All of the code is organized into folders. For example, ecs-ec2-windows.
 
 The code will look like the following:
 ```
@@ -48,3 +48,8 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 * Realize Enterprise Architecture with AWS and SAFe [[Packt]](https://www.packtpub.com/product/realize-enterprise-architecture-with-aws-and-safe/9781801812078?utm_source=github&utm_medium=repository&utm_campaign=9781801812078) [[Amazon]](https://www.amazon.com/dp/1801812071)
 
 * A Developer's Essential Guide to Docker Compose [[Packt]](https://www.packtpub.com/product/a-developers-essential-guide-to-docker-compose/9781803234366?utm_source=github&utm_medium=repository&utm_campaign=9781803234366) [[Amazon]](https://www.amazon.com/dp/1803234369)
+
+## Get to Know the Authors
+**Marcio Morales**
+is an expert on Microsoft stack technology with a broad technical breadth and deep understanding of Microsoft products. He combines more than 18 years of Microsoft technology experience as a consultant and technical instructor (Microsoft MCT). Nowadays, Marcio works as a Principal Specialist Solution Architect at AWS, helping customers to migrate, optimize and modernize Windows workloads on the AWS platform.
+Marcio holds a bachelor degree in Network Computer, LAN/WAN Management and a master's degree in Network Architecture and Cloud Computing. In the certification world, Marcio holds more than 30 certifications from vendors such as Microsoft, AWS, Hashicorp, and Kubernetes.
