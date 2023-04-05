@@ -2,7 +2,7 @@
 
 <a href="https://www.packtpub.com/product/running-windows-containers-on-aws/9781804614136?utm_source=github&utm_medium=repository&utm_campaign=9781801076012"><img src="https://content.packt.com/B19252/cover_image_small.jpg" alt="Running Windows Containers on AWS" height="256px" align="right"></a>
 
-This is the code repository for [](), published by Packt.
+This is the code repository for [Running Windows Containers on AWS](), published by Packt.
 
 **A complete guide to successfully running Windows containers on Amazon ECS, EKS, and AWS Fargate**
 
