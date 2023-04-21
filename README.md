@@ -53,3 +53,8 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Marcio Morales**
 is an expert on Microsoft stack technology with a broad technical breadth and deep understanding of Microsoft products. He combines more than 18 years of Microsoft technology experience as a consultant and technical instructor (Microsoft MCT). Nowadays, Marcio works as a Principal Specialist Solution Architect at AWS, helping customers to migrate, optimize and modernize Windows workloads on the AWS platform.
 Marcio holds a bachelor degree in Network Computer, LAN/WAN Management and a master's degree in Network Architecture and Cloud Computing. In the certification world, Marcio holds more than 30 certifications from vendors such as Microsoft, AWS, Hashicorp, and Kubernetes.
+
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781804614136">https://packt.link/free-ebook/9781804614136 </a> </p>
