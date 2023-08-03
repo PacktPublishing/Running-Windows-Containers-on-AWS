@@ -33,7 +33,7 @@ resource "aws_alb_listener" "ecs_alb_listener" {
  ```
 
 **Following is what you need for this book:**
-	This book is targeted towards DevOps engineer, SREs, solution architects, or a Windows sysadmin who wants to learn more about running Windows containers on AWS. In order to learn from this book, you should have a basic understanding of containers, Docker, and Kubernetes. The book is also beneficial for Windows application developers who want to explore how to achieve better application scalability using containers as a compute layer.
+This book is targeted towards DevOps engineer, SREs, solution architects, or a Windows sysadmin who wants to learn more about running Windows containers on AWS. In order to learn from this book, you should have a basic understanding of containers, Docker, and Kubernetes. The book is also beneficial for Windows application developers who want to explore how to achieve better application scalability using containers as a compute layer.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-15).
 ### Software and Hardware List
